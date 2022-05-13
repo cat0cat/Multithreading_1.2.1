@@ -26,9 +26,9 @@ class AutoShop {
         for (int i = 0; i < COUNT_CARS; i++) {
             try {
                 Thread.sleep(PRODUCE_TIME);
-                cadillacs.add(new Cadillac());
                 System.out.println(Thread.currentThread().getName() + " выпустил новый Escalade");
                 synchronized (this) {
+                    cadillacs.add(new Cadillac());
                     notify();
                 }
             } catch (InterruptedException e) {
